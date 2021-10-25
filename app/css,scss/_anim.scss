@@ -1,0 +1,50 @@
+@keyframes rotate {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes day-night{
+    0%{
+        background: $Very-dark-blue2;
+    }
+    100%{
+        background: $light-sky;
+    }
+
+}
+
+@keyframes hills {
+    from{
+        filter: hue-rotate(0);
+    }
+    to{
+        filter: hue-rotate(300deg) sepia(100%);
+    }
+}
+
+@keyframes opacity {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes slide {
+    from{
+        transform: rotate(0);
+        
+    }
+    to{
+        transform: rotateX(-180deg);
+        transform-origin: bottom;
+        border: 1px solid $Very-dark-blue2;
+        //background: rgba(255, 255, 255, 0.1);
+        
+    }
+}
