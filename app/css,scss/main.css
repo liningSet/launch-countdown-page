@@ -20,24 +20,60 @@
   }
 }
 
+@-webkit-keyframes rotate-partly {
+  to {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+}
+
+@keyframes rotate-partly {
+  to {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+}
+
 @-webkit-keyframes day-night {
   0% {
-    background: #191a24;
+    background: #1e1f29;
+  }
+  50% {
+    background: #c2e2ff;
   }
   100% {
-    background: #c2e2ff;
+    background: #1e1f29;
   }
 }
 
 @keyframes day-night {
   0% {
-    background: #191a24;
+    background: #1e1f29;
+  }
+  50% {
+    background: #c2e2ff;
   }
   100% {
-    background: #c2e2ff;
+    background: #1e1f29;
   }
 }
 
+/*
+@keyframes day-night {
+  0% {
+    //background: $Very-dark-blue;
+    background: $light-sky;
+  }
+  50% {
+    //background: $light-sky;
+    //background: $Very-dark-blue;
+  }
+  100% {
+    background: $Very-dark-blue;
+    //background: $light-sky;
+  }
+}
+*/
 @-webkit-keyframes hills {
   from {
     -webkit-filter: hue-rotate(0);
@@ -48,7 +84,6 @@
             filter: hue-rotate(300deg) sepia(100%);
   }
 }
-
 @keyframes hills {
   from {
     -webkit-filter: hue-rotate(0);
@@ -79,34 +114,162 @@
 }
 
 @-webkit-keyframes slide {
-  from {
+  0% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
+    background: rgba(17, 17, 17, 0.8);
+    opacity: 0;
   }
-  to {
+  50% {
+    opacity: 1;
+  }
+  100% {
     -webkit-transform: rotateX(-180deg);
             transform: rotateX(-180deg);
-    -webkit-transform-origin: bottom;
-            transform-origin: bottom;
-    border: 1px solid #191a24;
+    background: #343650;
+    opacity: 0.25;
   }
 }
 
 @keyframes slide {
-  from {
+  0% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
+    background: rgba(17, 17, 17, 0.8);
+    opacity: 0;
   }
-  to {
+  50% {
+    opacity: 1;
+  }
+  100% {
     -webkit-transform: rotateX(-180deg);
             transform: rotateX(-180deg);
-    -webkit-transform-origin: bottom;
-            transform-origin: bottom;
-    border: 1px solid #191a24;
+    background: #343650;
+    opacity: 0.25;
   }
 }
 
-*, *::before, *::after {
+@-webkit-keyframes move {
+  25% {
+    -webkit-transform: translate(5rem, 5rem);
+            transform: translate(5rem, 5rem);
+  }
+  50% {
+    -webkit-transform: translate(0, 5rem);
+            transform: translate(0, 5rem);
+  }
+  75% {
+    -webkit-transform: translate(-5rem, 0);
+            transform: translate(-5rem, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, -5rem);
+            transform: translate(0, -5rem);
+  }
+}
+
+@keyframes move {
+  25% {
+    -webkit-transform: translate(5rem, 5rem);
+            transform: translate(5rem, 5rem);
+  }
+  50% {
+    -webkit-transform: translate(0, 5rem);
+            transform: translate(0, 5rem);
+  }
+  75% {
+    -webkit-transform: translate(-5rem, 0);
+            transform: translate(-5rem, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, -5rem);
+            transform: translate(0, -5rem);
+  }
+}
+
+@-webkit-keyframes time-box-bg {
+  0% {
+    background: #343650;
+    -webkit-box-shadow: 0 10px 0 #191a24;
+            box-shadow: 0 10px 0 #191a24;
+  }
+  100% {
+    background: #8fd1f5;
+    -webkit-box-shadow: 0 10px 0 #366179;
+            box-shadow: 0 10px 0 #366179;
+  }
+}
+
+@keyframes time-box-bg {
+  0% {
+    background: #343650;
+    -webkit-box-shadow: 0 10px 0 #191a24;
+            box-shadow: 0 10px 0 #191a24;
+  }
+  100% {
+    background: #8fd1f5;
+    -webkit-box-shadow: 0 10px 0 #366179;
+            box-shadow: 0 10px 0 #366179;
+  }
+}
+
+@-webkit-keyframes color-change {
+  0% {
+    background: #1e1f29;
+  }
+  100% {
+    background: #366179;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    background: #1e1f29;
+  }
+  100% {
+    background: #366179;
+  }
+}
+
+@-webkit-keyframes border-color-change {
+  0% {
+    border-bottom: 1px solid rgba(22, 22, 22, 0.5);
+  }
+  100% {
+    border-bottom: 1px solid rgba(55, 99, 123, 0.5);
+  }
+}
+
+@keyframes border-color-change {
+  0% {
+    border-bottom: 1px solid rgba(22, 22, 22, 0.5);
+  }
+  100% {
+    border-bottom: 1px solid rgba(55, 99, 123, 0.5);
+  }
+}
+
+@-webkit-keyframes number-color {
+  0% {
+    color: #fb6087;
+  }
+  100% {
+    color: #b61b42;
+  }
+}
+
+@keyframes number-color {
+  0% {
+    color: #fb6087;
+  }
+  100% {
+    color: #b61b42;
+  }
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -137,6 +300,8 @@ main {
       -ms-flex-align: center;
           align-items: center;
   gap: 10em;
+  -webkit-animation: day-night 325s infinite linear 75s;
+          animation: day-night 325s infinite linear 75s;
 }
 
 main .counter-container {
@@ -144,6 +309,7 @@ main .counter-container {
   z-index: 9999999;
   text-align: center;
   margin: 5em 0 0;
+  padding: 0 2rem;
 }
 
 main .counter-container h1 {
@@ -180,6 +346,42 @@ main .counter-container .time-cubes-flex .time-cube {
           perspective: 10rem;
 }
 
+main .counter-container .time-cubes-flex .time-cube .outer-page-container {
+  position: relative;
+  -webkit-perspective: 20rem;
+          perspective: 20rem;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+main .counter-container .time-cubes-flex .time-cube .outer-page-container .up-page,
+main .counter-container .time-cubes-flex .time-cube .outer-page-container .down-page {
+  position: absolute;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  border-bottom: 1px solid #1e1f29;
+  border-radius: 5px;
+}
+
+main .counter-container .time-cubes-flex .time-cube .outer-page-container .up-page.up-page,
+main .counter-container .time-cubes-flex .time-cube .outer-page-container .down-page.up-page {
+  border: 1px solid rgba(238, 238, 238, 0.05);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+main .counter-container .time-cubes-flex .time-cube .outer-page-container .up-page.down-page,
+main .counter-container .time-cubes-flex .time-cube .outer-page-container .down-page.down-page {
+  background: rgba(17, 17, 17, 0.3);
+  border-bottom: 1px solid rgba(22, 22, 22, 0.5);
+  -webkit-animation: border-color-change 325s infinite linear alternate 75s;
+          animation: border-color-change 325s infinite linear alternate 75s;
+  z-index: 10;
+}
+
 main .counter-container .time-cubes-flex .time-cube .time {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,25 +401,19 @@ main .counter-container .time-cubes-flex .time-cube .time {
   border-radius: 5px;
   background: #343650;
   position: relative;
-  -webkit-perspective: 10rem;
-          perspective: 10rem;
+  -webkit-perspective: 20rem;
+          perspective: 20rem;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-box-shadow: 0 10px 0 #191a24;
           box-shadow: 0 10px 0 #191a24;
+  overflow: hidden;
+  -webkit-animation: time-box-bg 162.5s infinite linear alternate 75s;
+          animation: time-box-bg 162.5s infinite linear alternate 75s;
 }
 
-main .counter-container .time-cubes-flex .time-cube .time .up-page, main .counter-container .time-cubes-flex .time-cube .time .down-page {
-  position: absolute;
-  background: rgba(17, 17, 17, 0.2);
-  top: 0;
-  width: 100%;
-  height: 50%;
-  border-bottom: 1px solid #1e1f29;
-  border-radius: 5px;
-}
-
-main .counter-container .time-cubes-flex .time-cube .time .circle-left, main .counter-container .time-cubes-flex .time-cube .time .circle-right {
+main .counter-container .time-cubes-flex .time-cube .time .circle-left,
+main .counter-container .time-cubes-flex .time-cube .time .circle-right {
   height: 10px;
   width: 10px;
   border-radius: 50%;
@@ -226,19 +422,25 @@ main .counter-container .time-cubes-flex .time-cube .time .circle-left, main .co
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background: #1e1f29;
+  -webkit-animation: color-change 162.5s infinite linear alternate 75s;
+          animation: color-change 162.5s infinite linear alternate 75s;
 }
 
-main .counter-container .time-cubes-flex .time-cube .time .circle-left.circle-left, main .counter-container .time-cubes-flex .time-cube .time .circle-right.circle-left {
+main .counter-container .time-cubes-flex .time-cube .time .circle-left.circle-left,
+main .counter-container .time-cubes-flex .time-cube .time .circle-right.circle-left {
   left: -5px;
 }
 
-main .counter-container .time-cubes-flex .time-cube .time .circle-left.circle-right, main .counter-container .time-cubes-flex .time-cube .time .circle-right.circle-right {
+main .counter-container .time-cubes-flex .time-cube .time .circle-left.circle-right,
+main .counter-container .time-cubes-flex .time-cube .time .circle-right.circle-right {
   right: -5px;
 }
 
 main .counter-container .time-cubes-flex .time-cube .number {
   color: #fb6087;
   font-size: calc(1rem + 2vw);
+  -webkit-animation: number-color 162.5s infinite linear alternate 75s;
+          animation: number-color 162.5s infinite linear alternate 75s;
 }
 
 main .counter-container .time-cubes-flex .time-cube h3 {
@@ -252,22 +454,32 @@ main .counter-container .time-cubes-flex .time-cube h3 {
   bottom: 0;
   pointer-events: none;
   z-index: 100;
+  min-width: 1000px;
+  width: 110vw;
+  -webkit-animation: hills 162.5s linear infinite alternate 75s;
+          animation: hills 162.5s linear infinite alternate 75s;
 }
 
 .stars {
   position: fixed;
   top: 0;
   pointer-events: none;
+  -webkit-animation: rotate-partly 35s ease-in-out infinite alternate, opacity 162.5s ease-out infinite alternate 75s;
+          animation: rotate-partly 35s ease-in-out infinite alternate, opacity 162.5s ease-out infinite alternate 75s;
 }
 
 .cycle-of-day-night {
   position: fixed;
   border-radius: 50%;
+  bottom: -25vw;
   width: 70%;
   aspect-ratio: 1 / 1;
+  -webkit-animation: rotate 300s linear infinite;
+          animation: rotate 300s linear infinite;
 }
 
-.cycle-of-day-night .moon, .cycle-of-day-night .sun {
+.cycle-of-day-night .moon,
+.cycle-of-day-night .sun {
   position: absolute;
   height: 5rem;
   width: 5rem;
@@ -275,17 +487,19 @@ main .counter-container .time-cubes-flex .time-cube h3 {
   border-radius: 50%;
 }
 
-.cycle-of-day-night .moon.moon, .cycle-of-day-night .sun.moon {
+.cycle-of-day-night .moon.moon,
+.cycle-of-day-night .sun.moon {
   background: #d8d3d3;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  -webkit-box-shadow: 0 0 1rem 1px rgba(255, 255, 255, 0.5);
-          box-shadow: 0 0 1rem 1px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 1em 1px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 0 1em 1px rgba(255, 255, 255, 0.5);
   left: -2.5rem;
 }
 
-.cycle-of-day-night .moon.moon .dot, .cycle-of-day-night .sun.moon .dot {
+.cycle-of-day-night .moon.moon .dot,
+.cycle-of-day-night .sun.moon .dot {
   position: absolute;
   height: 1rem;
   width: 1rem;
@@ -295,7 +509,8 @@ main .counter-container .time-cubes-flex .time-cube h3 {
   left: 50%;
 }
 
-.cycle-of-day-night .moon.moon .dot2, .cycle-of-day-night .sun.moon .dot2 {
+.cycle-of-day-night .moon.moon .dot2,
+.cycle-of-day-night .sun.moon .dot2 {
   position: absolute;
   height: 0.6rem;
   width: 0.6rem;
@@ -305,7 +520,8 @@ main .counter-container .time-cubes-flex .time-cube h3 {
   left: 40%;
 }
 
-.cycle-of-day-night .moon.moon .dot3, .cycle-of-day-night .sun.moon .dot3 {
+.cycle-of-day-night .moon.moon .dot3,
+.cycle-of-day-night .sun.moon .dot3 {
   position: absolute;
   height: 0.5rem;
   width: 0.5rem;
@@ -315,13 +531,14 @@ main .counter-container .time-cubes-flex .time-cube h3 {
   left: 35%;
 }
 
-.cycle-of-day-night .moon.sun, .cycle-of-day-night .sun.sun {
+.cycle-of-day-night .moon.sun,
+.cycle-of-day-night .sun.sun {
   background: #ffd256;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  -webkit-box-shadow: 0 0 1rem 1px rgba(255, 234, 142, 0.5);
-          box-shadow: 0 0 1rem 1px rgba(255, 234, 142, 0.5);
+  -webkit-box-shadow: 0 0 4em 20px rgba(255, 234, 142, 0.5);
+          box-shadow: 0 0 4em 20px rgba(255, 234, 142, 0.5);
   right: -2.5rem;
 }
 
@@ -344,5 +561,47 @@ main .counter-container .time-cubes-flex .time-cube h3 {
 
 .social-media li:hover i {
   color: #fb6087;
+}
+
+@media (max-width: 500px) {
+  main {
+    gap: 0;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  main .counter-container {
+    margin-top: 0;
+  }
+  main .counter-container h1 {
+    margin: 0 0 4rem;
+  }
+  main .counter-container .time-cubes-flex {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 1.5rem;
+  }
+  main .counter-container .time-cubes-flex > * {
+    width: 45%;
+  }
+  main .counter-container .time-cubes-flex .time-cube .time {
+    width: 5rem;
+    height: 5rem;
+  }
+  main .counter-container .time-cubes-flex .time-cube .number {
+    font-size: calc(2rem + 2vw);
+  }
+  .social-media {
+    gap: 1.75rem;
+  }
+  .social-media li i {
+    font-size: 1.5rem;
+  }
+  .cycle-of-day-night {
+    bottom: -10vw;
+  }
 }
 /*# sourceMappingURL=main.css.map */

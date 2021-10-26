@@ -1,14 +1,14 @@
-@mixin dot ($size){
-    position: absolute;
-    height: $size;
-    width: $size;
-    border-radius: 50%;
-    background: rgb(150, 149, 149);
+@mixin dot($size) {
+  position: absolute;
+  height: $size;
+  width: $size;
+  border-radius: 50%;
+  background: rgb(150, 149, 149);
 }
 
-@mixin planet($bg, $clr){
-    background: $bg;
-    top: 50%;
-    transform: translateY(-50%);
-    box-shadow: 0 0 1rem 1px $clr;
+@mixin planet($bg, $clr, $blur, $density) {
+  background: $bg;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 $blur $density $clr;
 }
